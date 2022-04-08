@@ -18,14 +18,16 @@ val = Math.random();
 
 val = Math.floor(Math.random() * 5 + 1);
 
-const min = 9;
-const max = 20;
+const min = 10;
+const max = 21;
 
 function find10() {
-  return Math.floor(Math.random() * min + (max - min + 1));
+  return Math.floor(Math.random() * min + (max - min));
 }
 
-// while (result !== 10) {
+let result;
+
+// while (true) {
 //   const result = find10();
 //   console.log(result);
 //   if (result === 10) break;
