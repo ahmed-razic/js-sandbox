@@ -11,7 +11,7 @@ val = firstName + ' ' + lastName;
 val = firstName;
 val += lastName;
 
-//concat methos
+//concat methods
 
 val = firstName.concat(' ', lastName, '.');
 
@@ -42,6 +42,7 @@ val = text.charAt(7);
 val = text.substring(2, 8);
 val = text.slice(2, 90);
 val = text.split(' ');
+val = text.split(' ', 3);
 val = text.split(',');
 val = text.replace('Ahmed', 'Ibrahim');
 val = text.includes('Ahmed');
