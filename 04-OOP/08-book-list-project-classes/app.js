@@ -12,6 +12,7 @@ class UI {
   constructor() {}
   //create prototype methods for UI constructor
   addBook(book) {
+    //one option
     // const tr = document.createElement('tr');
     // const td1 = document.createElement('td');
     // const td2 = document.createElement('td');
@@ -25,6 +26,8 @@ class UI {
     // tr.appendChild(td2);
     // tr.appendChild(td3);
     // tr.appendChild(td4);
+
+    //better option
     const row = document.querySelector('#book-list');
     const tr = document.createElement('tr');
     tr.innerHTML = `
