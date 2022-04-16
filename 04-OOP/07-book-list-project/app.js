@@ -42,6 +42,23 @@ UI.prototype.clearInputs = function () {
   document.querySelector('#isbn').value = '';
 };
 
+UI.prototype.showAlert = function (message, className) {
+  const alertDiv = document.createElement('div');
+  alertDiv.className = `alert ${className}`;
+  alertDiv.appendChild(document.createTextNode(message));
+
+  const form = document.querySelector('#book-form');
+  const parent = document.querySelector('.container');
+
+  console.log(alertDiv);
+
+  parent.insertBefore(alertDiv, form);
+
+  setTimeout(function () {
+    document.querySelector('.alert').remove();
+  }, 3000);
+};
+
 //define submit event handler
 document.querySelector('#book-form').addEventListener('submit', function (e) {
   e.preventDefault();
@@ -49,10 +66,15 @@ document.querySelector('#book-form').addEventListener('submit', function (e) {
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
   const isbn = document.querySelector('#isbn').value;
-
-  const book = new Book(title, author, isbn);
-
   const ui = new UI();
-  ui.addBook(book);
-  ui.clearInputs();
+
+  if (title === '' || author === '' || isbn === '') {
+    ui.showAlert('Please fill all inputs.', 'error');
+  } else {
+    const book = new Book(title, author, isbn);
+
+    ui.addBook(book);
+    ui.showAlert('Book added', 'success');
+    ui.clearInputs();
+  }
 });
