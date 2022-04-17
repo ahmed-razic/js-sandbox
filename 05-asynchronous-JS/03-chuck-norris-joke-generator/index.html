@@ -18,9 +18,11 @@
   <body>
     <div class="container">
       <h2>Chuck Norris Jokes</h2>
+      <p id="number-of-jokes"></p>
+      <p id="category-of-jokes"></p>
       <form id="joke-form">
         <div>
-          <label for="number-of-jokes">Number of jokes</label>
+          <label for="number-of-jokes">Enter desired number of jokes</label>
           <input
             type="number"
             id="number-of-jokes"
@@ -30,12 +32,12 @@
           />
         </div>
         <div>
-          <input type="button" value="Get Jokes" />
+          <input type="submit" value="Get Jokes" />
         </div>
       </form>
 
       <div>
-        <ul class="jokes"></ul>
+        <ul id="jokes"></ul>
       </div>
     </div>
     <script src="./app.js"></script>
