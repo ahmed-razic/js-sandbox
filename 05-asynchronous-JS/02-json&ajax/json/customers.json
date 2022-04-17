@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Ahmed",
+    "address": "101 Main street",
+    "company": "101 Designs",
+    "phone": "123-456"
+  },
+  {
+    "id": 2,
+    "name": "Ahmed",
+    "address": "101 Main street",
+    "company": "101 Designs",
+    "phone": "123-456"
+  },
+  {
+    "id": 3,
+    "name": "Ahmed",
+    "address": "101 Main street",
+    "company": "101 Designs",
+    "phone": "123-456"
+  }
+]
