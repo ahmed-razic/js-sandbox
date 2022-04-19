@@ -48,14 +48,59 @@ XHR.prototype.get = function (url, callback) {
   }; */
 
   this.xhr.onload = function () {
-    callback(JSON.parse(self.xhr.responseText));
-    console.log(typeof self.xhr.responseText);
-    console.log(typeof JSON.parse(self.xhr.responseText));
+    if (self.xhr.status === 200) {
+      callback(JSON.parse(self.xhr.responseText));
+    } else {
+      console.log('There was an error');
+    }
   };
 
   this.xhr.send();
 };
 
-XHR.prototype.post = function () {};
-XHR.prototype.put = function () {};
-XHR.prototype.delete = function () {};
+XHR.prototype.post = function (url, data, callback) {
+  const self = this;
+  this.xhr.open('POST', url, true);
+  this.xhr.setRequestHeader = ('Content-Type', 'application/json');
+
+  this.xhr.onload = function () {
+    if (self.xhr.status === 201) {
+      callback(JSON.parse(self.xhr.responseText));
+    } else {
+      console.log('There was an error');
+    }
+  };
+
+  this.xhr.send(JSON.stringify(data));
+};
+
+XHR.prototype.put = function (url, data, callback) {
+  const self = this;
+  this.xhr.open('PUT', url, true);
+  this.xhr.setRequestHeader = ('Content-Type', 'application/json');
+
+  this.xhr.onload = function () {
+    if (self.xhr.status === 201) {
+      callback(JSON.parse(self.xhr.responseText));
+    } else {
+      console.log('There was an error');
+    }
+  };
+
+  this.xhr.send(JSON.stringify(data));
+};
+
+XHR.prototype.delete = function (url) {
+  const self = this;
+  this.xhr.open('DELETE', url, true);
+
+  this.xhr.onload = function () {
+    if (self.xhr.status === 200) {
+      console.log('post deleted');
+    } else {
+      console.log('There was an error');
+    }
+  };
+
+  this.xhr.send();
+};
