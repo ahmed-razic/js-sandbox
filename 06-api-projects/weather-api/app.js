@@ -13,7 +13,7 @@ document.getElementById('save-changes').addEventListener('click', (e) => {
   storage.setLocationData(city, state);
 
   console.log(city, state);
-  console.log(storage.getLocationData());
+
   getWeather();
 
   //use jquery to close modal

@@ -1,9 +1,9 @@
 class Storage {
-  constructor() {
+  constructor(city, state) {
     this.city = city;
     this.state = state;
-    this.defaultCity = 'London';
-    this.defaultState = 'UK';
+    this.defaultCity = 'Mekka';
+    this.defaultState = 'SA';
   }
 
   getLocationData() {
