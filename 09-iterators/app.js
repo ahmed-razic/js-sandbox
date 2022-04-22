@@ -14,5 +14,6 @@ console.log(numbers.nextNumber().value);
 console.log(numbers.nextNumber().value);
 console.log(numbers.nextNumber().value);
 console.log(numbers.nextNumber().value);
+console.log(numbers.nextNumber());
 console.log(numbers.nextNumber().value);
 console.log(numbers.nextNumber());
