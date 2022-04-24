@@ -1,47 +1,34 @@
-const map1 = new Map();
+const set1 = new Set();
 
-const emptyObj = {};
+set1.add(100);
+set1.add({ a: 1, b: 2, c: 3 });
+set1.add([1, 2, 3]);
 
-const firstName = 'Ahmed';
-const myFunc = function () {
-  console.log('Hi');
-};
+console.log(typeof set1);
 
-const arr1 = [1, 2, 3];
+console.log(set1.has(0));
+console.log(set1.has(100));
+console.log(set1.has([1, 2, 3]));
 
-map1.set(emptyObj, 'Value of key 1');
-map1.set(firstName, 'Value of key 2');
-map1.set(myFunc, 'Value of key 3');
-map1.set(arr1, 'Value of key 1');
-
-console.log(map1.get(emptyObj));
-console.log(map1.get(firstName));
-console.log(map1.get(myFunc));
-console.log(map1.get(arr1));
-
-console.log(map1);
-
-const map2 = new Map([
-  ['key1', 'value1'],
-  ['key2', 'value2'],
-  ['key3', 'value3'],
-]);
-
-console.log(map2);
-
-map2.forEach((key, value) => {
-  console.log(key, value);
-});
-
-for (let [key, value] of map2) {
-  console.log(key, value);
-}
-for (let key of map2.keys()) {
-  console.log(key);
-}
-for (let value of map2.values()) {
-  console.log(value);
+for (let x of set1) {
+  console.log(x);
 }
 
-const arr10 = Array.from(map2);
-console.log(arr10);
+console.log('--------------------------------------');
+set1.forEach((item) => console.log(item));
+
+console.log('--------------------------------------');
+const arr1 = Array.from(set1);
+console.log(arr1);
+console.log(arr1[2]);
+console.log('--------------------------------------');
+
+console.log(set1.entries());
+console.log(set1);
+
+console.log('--------------------------------------');
+const numbers = [2, 3, 4, 4, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 5, 32, 3, 4, 5];
+
+const set3 = new Set(numbers);
+console.log(numbers);
+console.log(set3);
