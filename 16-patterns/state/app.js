@@ -14,40 +14,22 @@ class PageState {
 
 class HomeState {
   constructor(page) {
-    document.querySelector('#heading').textContent = null;
-    document.querySelector(
-      '#content'
-    ).innerHTML = `  <div class="p-5 mb-4 bg-light rounded-3">
-    <div class="container-fluid py-5">
-      <h1 class="display-5 fw-bold">Custom jumbotron</h1>
-      <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
-      <button class="btn btn-primary btn-lg" type="button">Example button</button>
-    </div>
-  </div>`;
+    document.querySelector('#heading').textContent = 'Home';
+    document.querySelector('#content').innerHTML = `<h1>JUMBOTRON</h1>`;
   }
 }
 
 class AboutState {
   constructor(page) {
     document.querySelector('#heading').textContent = 'About Us';
-    document.querySelector('#heading').innerHTML = `<p>This is about page</p>`;
+    document.querySelector('#content').innerHTML = `<h1>About page</h1>`;
   }
 }
 
 class ContactState {
   constructor(page) {
     document.querySelector('#heading').textContent = 'Contact Us';
-    document.querySelector('#heading').innerHTML = `<form>
-    <div class="form-group">
-      <label>Name</label>
-      <input type="text" class="form-control">
-    </div>
-    <div class="form-group">
-    <label>Email address</label>
-    <input type="email" class="form-control">
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-  </form>`;
+    document.querySelector('#content').innerHTML = `<h1>Contact page</h1>`;
   }
 }
 
@@ -65,14 +47,12 @@ home.addEventListener('click', (e) => {
   e.preventDefault();
 });
 
-// About
 about.addEventListener('click', (e) => {
   page.change(new AboutState());
 
   e.preventDefault();
 });
 
-// Contact
 contact.addEventListener('click', (e) => {
   page.change(new ContactState());
 
